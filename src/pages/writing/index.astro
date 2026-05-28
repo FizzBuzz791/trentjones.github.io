@@ -1,0 +1,40 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const postModules = import.meta.glob("./*.md", { eager: true });
+
+const posts = Object.values(postModules)
+  .map((post: any) => ({
+    url: post.url,
+    frontmatter: post.frontmatter,
+  }))
+  .sort(
+    (a, b) =>
+      new Date(b.frontmatter.pubDate).getTime() -
+      new Date(a.frontmatter.pubDate).getTime()
+  );
+---
+
+<Layout>
+  <section>
+    <h1>Writing</h1>
+    <p>Notes on software, product thinking, leadership, and building useful things.</p>
+  </section>
+
+  <section class="post-list">
+    {posts.map((post) => (
+      <a class="post-card" href={post.url}>
+        <p class="eyebrow">
+          {new Date(post.frontmatter.pubDate).toLocaleDateString("en-AU", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}
+        </p>
+
+        <h2>{post.frontmatter.title}</h2>
+        <p>{post.frontmatter.description}</p>
+      </a>
+    ))}
+  </section>
+</Layout>
