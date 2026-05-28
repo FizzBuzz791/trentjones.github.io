@@ -1,3 +1,8 @@
+---
+import Nav from "../components/nav.astro";
+import "../styles/global.css";
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -6,10 +11,20 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Trent Jones</title>
 	</head>
 	<body>
-		<slot />
+		<header>
+			<Nav />
+		</header>
+
+		<main>
+			<slot />
+		</main>
+
+		<footer>
+			<p>© 2024 Trent Jones | Built with Astro 🚀</p>
+		</footer>
 	</body>
 </html>
 
