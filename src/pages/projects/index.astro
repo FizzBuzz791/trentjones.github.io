@@ -1,18 +1,25 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from "../../layouts/Layout.astro";
+import ProjectCard from "../../components/project-card.astro";
 ---
 
 <Layout>
-    <a class="project-card" href="/projects/setform">
-        <h2>Setform</h2>
-        <p>Swimming/workout tracking and structured training data.</p>
-    </a>
-    <a class="project-card" href="/projects/shelfmath">
-        <h2>ShelfMath</h2>
-        <p>Grocery unit-pricing and shopper decision support.</p>
-    </a>
-    <a class="project-card" href="/projects/kindrel">
-        <h2>Kindrel</h2>
-        <p>Household internet plan comparison and savings workflows.</p>
-    </a>
+  <ProjectCard
+    title="Setform"
+    description="Swimming/workout tracking and structured training data."
+    href="/projects/setform"
+    status="Active"
+  />
+  <ProjectCard
+    title="ShelfMath"
+    description="Grocery unit-pricing and shopper decision support."
+    href="/projects/shelfmath"
+    status="Active"
+  />
+  <ProjectCard
+    title="Kindrel"
+    description="Household internet plan comparison and savings workflows."
+    href="/projects/kindrel"
+    status="Active"
+  />
 </Layout>
