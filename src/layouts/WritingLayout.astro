@@ -2,6 +2,15 @@
 import Layout from "./Layout.astro";
 
 const { frontmatter } = Astro.props;
+
+const formattedDate = new Date(frontmatter.pubDate).toLocaleDateString(
+  "en-AU",
+  {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  },
+);
 ---
 
 <Layout>
@@ -11,7 +20,7 @@ const { frontmatter } = Astro.props;
       <h1>{frontmatter.title}</h1>
       <p class="description">{frontmatter.description}</p>
       <time datetime={frontmatter.pubDate}>
-        {frontmatter.pubDate}
+        {formattedDate}
       </time>
     </header>
 
