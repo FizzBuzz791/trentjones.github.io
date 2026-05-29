@@ -2,7 +2,7 @@
 layout: "../../layouts/WritingLayout.astro"
 title: "Four Side Projects Later: What I've Learned About AI-Assisted Development"
 description: "Lessons learned building four side projects with ChatGPT, GitHub Copilot and AI-assisted workflows."
-pubDate: 2026-05-29
+pubDate: 2026-06-02
 ---
 
 ## From ChatGPT to Copilot
